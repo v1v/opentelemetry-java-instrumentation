@@ -17,4 +17,4 @@ FROM bellsoft/liberica-openjdk-alpine:21.0.1
 COPY --from=app-build /app/spring-petclinic-rest.jar /app/spring-petclinic-rest.jar
 WORKDIR /app
 EXPOSE 9966
-CMD ["java", "-jar", "spring-petclinic-rest.jar"]
+CMD ["java", "-XX:ErrorFile=/app/results/hs_err_pid%p.log", "-jar", "spring-petclinic-rest.jar"]

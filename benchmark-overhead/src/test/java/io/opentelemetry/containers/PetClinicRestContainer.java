@@ -57,8 +57,6 @@ public class PetClinicRestContainer {
             .withExposedPorts(PETCLINIC_PORT)
             .withFileSystemBind(
                 namingConventions.localResults(), namingConventions.containerResults())
-            .withFileSystemBind(
-                namingConventions.localApp(), namingConventions.containerApp())
             .withCopyFileToContainer(
                 MountableFile.forClasspathResource("overhead.jfc"), "/app/overhead.jfc")
             .waitingFor(Wait.forHttp("/petclinic/actuator/health").forPort(PETCLINIC_PORT))
