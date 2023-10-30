@@ -10,6 +10,8 @@ public class NamingConventions {
 
   public final NamingConvention container = new NamingConvention("/results");
   public final NamingConvention local = new NamingConvention(".");
+  public final NamingConvention containerApp = new NamingConvention("/app");
+  public final NamingConvention localApp = new NamingConvention("./app");
 
   /** @return Root path for the local naming convention (where results are output) */
   public String localResults() {
@@ -19,5 +21,15 @@ public class NamingConventions {
   /** @return Root path for the container naming convention (where results are output) */
   public String containerResults() {
     return container.root();
+  }
+
+  /** @return Root path for the local naming convention (where app is output) */
+  public String localApp() {
+    return localApp.root();
+  }
+
+  /** @return Root path for the container naming convention (where app is output) */
+  public String containerApp() {
+    return containerApp.root();
   }
 }
